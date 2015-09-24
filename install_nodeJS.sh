@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Parameters
-nodeVersion='0.12'
+nodeVersion='4.1.1'
 
 # Prerequisites
 sudo apt-get install -y gcc g++ make build-essential
