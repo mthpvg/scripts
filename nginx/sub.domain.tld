@@ -1,8 +1,12 @@
 server {
-        listen 80;
-        listen [::]:80;
-        server_name SERVERNAME;
-        location / {
-                proxy_pass http://localhost:PORT;
-        }
+  listen 80;
+  listen [::]:80;
+  server_name SERVERNAME;
+  location / {
+    proxy_pass http://localhost:PORT;
+    proxy_set_header Host $host;
+    proxy_set_header X-Real-IP $remote_addr;
+    proxy_redirect off;
+    proxy_buffering off;
+  }
 }
