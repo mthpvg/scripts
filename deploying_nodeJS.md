@@ -1,11 +1,13 @@
+# Deploying node.js
+
 - giving your ssh key to the server so it can recognize you without password
 ```bash
-ssh-copy-id -i ~/.ssh/id_rsa.pub admin@ecoria.nianubo.eu
+ssh-copy-id -i ~/.ssh/id_rsa.pub user@domain.tld
 ```
 
 - connecting via ssh into the server
 ```bash
-ssh admin@ecoria.nianubo.eu
+ssh user@domain.tld
 ```
 
 - fetching the public ssh key of the server
@@ -22,11 +24,11 @@ cat ~/.ssh/id_rsa.pub
 
 - back to the server
 ```bash
-mkdir pauline && cd pauline
-git clone git@gitlab.com:Puine/ecoria.git
-cd ecoria
+mkdir gitlab && cd gitlab
+git clone git@gitlab.com:Puine/project.git
+cd project
 sudo npm install
 forever app.js
 ```
 
-- open a browser and go to: ecoria.nianubo.eu
+- open a browser and go to: domain.tld
