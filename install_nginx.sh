@@ -1,16 +1,16 @@
 #!/bin/bash
 
-#http://www.liberiangeek.net/2014/10/install-latest-version-nginx-ubuntu-14-10/
+#https://gist.github.com/Globegitter/685e3739c0f181bda3ec
 
 # Parameters
-codename='Trusty' # https://wiki.ubuntu.com/DevelopmentCodeNames
+codename='trusty' # https://wiki.ubuntu.com/DevelopmentCodeNames
 
 # Prerequisites
-cd /tmp/ && wget http://nginx.org/keys/nginx_signing.key
-sudo apt-key add nginx_signing.key
+wget -O - http://nginx.org/keys/nginx_signing.key | sudo apt-key add -
+sudo cp /etc/apt/sources.list /etc/apt/sources.list.bak
 
-deb http://nginx.org/packages/mainline/ubuntu/ $codename nginx
-deb-src http://nginx.org/packages/mainline/ubuntu/ $codename nginx
+echo "deb http://nginx.org/packages/ubuntu/ $codename nginx" | sudo tee -a /etc/apt/sources.list
+echo "deb-src http://nginx.org/packages/ubuntu/ $codename nginx" | sudo tee -a /etc/apt/sources.list
 
 # Installing nginx
 sudo apt-get update && sudo apt-get install nginx
@@ -19,5 +19,3 @@ sudo apt-get update && sudo apt-get install nginx
 #sudo service nginx stop
 #sudo service nginx restart
 #sudo service nginx status
-
-#a longer way at the bottom: https://gist.github.com/Globegitter/685e3739c0f181bda3ec
