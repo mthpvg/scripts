@@ -4,6 +4,7 @@
 nodeVersion='4.1.1'
 
 # Prerequisites
+sudo apt-get update
 sudo apt-get install -y gcc g++ make build-essential
 
 # Installing node
