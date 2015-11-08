@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Parameters
-nodeVersion='4.1.1'
+nodeVersion='4.2.2'
 
 # Prerequisites
 sudo apt-get update

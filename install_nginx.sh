@@ -1,5 +1,9 @@
 #!/bin/bash
 
+#Removing old versions of nginx
+sudo apt-get purge nginx nginx-common
+sudo apt-get autoremove
+
 #https://gist.github.com/Globegitter/685e3739c0f181bda3ec
 
 # Parameters
