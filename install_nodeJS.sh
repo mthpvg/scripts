@@ -1,11 +1,12 @@
 #!/bin/bash
 
 # Parameters
-nodeVersion='4.2.2'
+#nodeVersion='4.2.2'
 
 # Prerequisites
 sudo apt-get update
 sudo apt-get install -y gcc g++ make build-essential
+sudo apt-get install libkrb5-dev
 
 # Installing node
 # https://github.com/nodesource/distributions
